@@ -16,7 +16,7 @@ const BookTable = () => {
 
     if (!name || !guests || !date || !time || !phone) {
       alert("Please fill all fields");
-      return;
+        return;
     }
 
     const newBooking = {
