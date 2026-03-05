@@ -26,9 +26,9 @@ const AppContextProvider = ({ children }) => {
 
   
   const axiosInstance = axios.create({
-    baseURL: "http://localhost:5000",
-    withCredentials: true,
-  });
+  baseURL: import.meta.env.VITE_API_URL, // points to your deployed backend
+  withCredentials: true,
+});
 
   
   const addToCart = (menu, qty = 1) => {

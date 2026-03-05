@@ -29,7 +29,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://resturent-app-phi.vercel.app",
+    origin: ["http://localhost:5173","https://your-frontend.vercel.app"],
     credentials: true,
   })
 );
