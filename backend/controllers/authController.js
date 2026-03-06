@@ -8,14 +8,13 @@ const generateToken = (res, payload) => {
 
   res.cookie("token", token, {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production", // ✅ works on HTTPS
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ cross-site cookies in prod
     maxAge: 24 * 60 * 60 * 1000,
   });
 
   return token;
 };
-
 
 export const registerUser = async (req, res) => {
   try {
